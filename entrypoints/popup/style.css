@@ -1,0 +1,234 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  background: #07111f;
+  color: #f4f8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  min-height: 430px;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgb(29 155 240 / 10%), transparent 42%),
+    #07111f;
+}
+
+.shell {
+  min-height: 430px;
+  padding: 24px;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid #2b91d5;
+  border-radius: 14px 4px 14px 4px;
+  background: #0e2136;
+  color: #7bc8fb;
+  font: 700 18px/1 Consolas, "SFMono-Regular", monospace;
+  box-shadow: 6px 6px 0 rgb(29 155 240 / 12%);
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: #7393ad;
+  font: 700 10px/1 Consolas, "SFMono-Regular", monospace;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.status-panel {
+  overflow: hidden;
+  border: 1px solid #1b3850;
+  border-radius: 16px;
+  background: #0b1928;
+}
+
+.status-heading,
+.metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-heading {
+  padding: 14px 16px 10px;
+  color: #a9bed0;
+  font-size: 12px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #17283a;
+  color: #9eb1c3;
+  font-size: 11px;
+}
+
+.status-badge[data-status="running"] {
+  background: rgb(29 155 240 / 16%);
+  color: #7bc8fb;
+}
+
+.status-badge[data-status="error"] {
+  background: rgb(255 103 103 / 14%);
+  color: #ff9d9d;
+}
+
+.scan-rail {
+  height: 3px;
+  background: #14283a;
+}
+
+.scan-rail span {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #1d9bf0, transparent);
+  animation: scan 1.7s ease-in-out infinite;
+}
+
+.status-panel:not(:has(.status-badge[data-status="running"])) .scan-rail span {
+  animation-play-state: paused;
+}
+
+.metric-row {
+  padding: 18px 16px;
+}
+
+.metric-row > div {
+  display: grid;
+  gap: 7px;
+}
+
+.metric-count {
+  text-align: right;
+}
+
+.metric-label {
+  color: #6f8aa1;
+  font-size: 11px;
+}
+
+.metric-row strong {
+  max-width: 220px;
+  overflow: hidden;
+  font: 600 15px/1.2 Consolas, "SFMono-Regular", monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#countValue {
+  color: #7bc8fb;
+  font-size: 24px;
+}
+
+.message {
+  min-height: 52px;
+  margin: 16px 2px;
+  color: #91a8bb;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.message[data-error="true"] {
+  color: #ff9d9d;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.button {
+  min-height: 42px;
+  border: 1px solid #29465f;
+  border-radius: 10px;
+  background: #102236;
+  color: #dceaf5;
+  cursor: pointer;
+  font: 600 13px/1 "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.button:hover:not(:disabled) {
+  border-color: #4b7392;
+  transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid #7bc8fb;
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.button-primary {
+  border-color: #1d9bf0;
+  background: #1d9bf0;
+  color: #04121f;
+}
+
+#startButton {
+  grid-column: 1 / -1;
+}
+
+.button-danger {
+  border-color: #70434d;
+  color: #ffb3b3;
+}
+
+.button[hidden] {
+  display: none;
+}
+
+footer {
+  margin-top: 22px;
+  color: #536c81;
+  font-size: 10px;
+  text-align: center;
+}
+
+@keyframes scan {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(286%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

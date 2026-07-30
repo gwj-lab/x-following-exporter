@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X 关注导出器</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div class="brand-mark" aria-hidden="true">X↓</div>
+        <div>
+          <p class="eyebrow">LOCAL EXPORT</p>
+          <h1>关注导出器</h1>
+        </div>
+      </header>
+
+      <section class="status-panel" aria-labelledby="status-title">
+        <div class="status-heading">
+          <span id="status-title">采集状态</span>
+          <span id="statusBadge" class="status-badge" data-status="idle">待机</span>
+        </div>
+        <div class="scan-rail" aria-hidden="true"><span></span></div>
+        <div class="metric-row">
+          <div>
+            <span class="metric-label">当前账号</span>
+            <strong id="ownerValue">—</strong>
+          </div>
+          <div class="metric-count">
+            <span class="metric-label">已采集</span>
+            <strong id="countValue">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <p id="message" class="message" role="status">
+        打开已登录的 X 页面，然后开始导出。
+      </p>
+
+      <div class="actions">
+        <button id="startButton" class="button button-primary" type="button">开始导出</button>
+        <button id="pauseButton" class="button" type="button" hidden>暂停</button>
+        <button id="resumeButton" class="button button-primary" type="button" hidden>继续</button>
+        <button id="stopButton" class="button button-danger" type="button" hidden>
+          停止并导出
+        </button>
+      </div>
+
+      <footer>数据只保存在本机 · CSV 可直接用 Excel 打开</footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
