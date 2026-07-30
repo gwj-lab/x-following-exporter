@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/650865589/x-following-exporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/650865589/x-following-exporter/issues"
+  },
+  "homepage": "https://github.com/650865589/x-following-exporter#readme",
   "type": "module",
   "scripts": {
     "postinstall": "wxt prepare",
