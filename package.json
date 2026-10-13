@@ -5,12 +5,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/650865589/x-following-exporter.git"
+    "url": "git+https://github.com/gwj-lab/x-following-exporter.git"
   },
   "bugs": {
-    "url": "https://github.com/650865589/x-following-exporter/issues"
+    "url": "https://github.com/gwj-lab/x-following-exporter/issues"
   },
-  "homepage": "https://github.com/650865589/x-following-exporter#readme",
+  "homepage": "https://github.com/gwj-lab/x-following-exporter#readme",
   "type": "module",
   "scripts": {
     "postinstall": "wxt prepare",
